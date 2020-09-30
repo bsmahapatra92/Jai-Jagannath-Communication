@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+	
+
+<body>
+
+	<div th:insert="fragments/commonui :: userhead"></div>
+ 	<div th:insert="fragments/commonui :: usermenu"></div>
+
+
+	<div class="container-fluid">
+		<div class="card">
+			<div class="card-header bg-primary text-white text-center">
+				<h3>Welcome To Mobile Page</h3>
+			</div>
+			<div class="card-body">
+				<form id="mobileForm" th:action="@{/mobile/save}" method="POST"
+					th:object="${mobile}">
+
+					<!-- Row#1 -->
+					<div class="row">
+						<div class="col-2">
+							<label for="mobBrandName">Brand Name</label>
+						</div>
+						<div class="col-4">
+							<input type="text" th:field="*{mobBrandName}"
+								class="form-control" />
+						</div>
+						<div class="col-4">
+							<span id="mobBrandNameError"></span>
+						</div>
+					</div>
+
+
+					<!-- Row#2 -->
+					<div class="row">
+						<div class="col-2">
+							<label for="mobModelName">Model</label>
+						</div>
+						<div class="col-4">
+							<input type="text" th:field="*{mobModelName}"
+								class="form-control" />
+						</div>
+						<div class="col-4">
+							<span id="mobModelNameError"></span>
+						</div>
+					</div>
+
+					<!-- Row#2 -->
+					<div class="row">
+						<div class="col-2">
+							<label for="mobInStock">In Stock</label>
+						</div>
+						<div class="col-4">
+							<input type="number" th:field="*{mobInStock}"
+								class="form-control" />
+						</div>
+						<div class="col-4">
+							<span id="mobInStockError"></span>
+						</div>
+					</div>
+
+					<!-- Row#2 -->
+					<div class="row">
+						<div class="col-2">
+							<label for="mobBCost">B.Prize</label>
+						</div>
+						<div class="col-4">
+							<input type="number" th:field="*{mobBCost}" class="form-control" />
+						</div>
+						<div class="col-4">
+							<span id="mobBCostError"></span>
+						</div>
+					</div>
+
+					<!-- Row#2 -->
+					<div class="row">
+						<div class="col-2">
+							<label for="mobSCost">S.Prize</label>
+						</div>
+						<div class="col-4">
+							<input type="number" th:field="*{mobSCost}" class="form-control" />
+						</div>
+						<div class="col-4">
+							<span id="mobSCostError"></span>
+						</div>
+					</div>
+					
+					<input type="submit" class="btn btn-success" value="Save Mobile">|
+					<a th:href="@{/mobile/all}" class="btn btn-info">ViewALL</a>
+				</form>
+			</div>
+			<!-- CARD BODY END -->
+
+			<!-- Card Footer Section -->
+			<div th:if="${message!=null}">
+				<div class="card-footer bg-info text-white text-center">
+					<b><span th:text="${message}"></span></b>
+				</div>
+			</div>
+		</div>
+		<!-- CARD END -->
+
+	</div>
+
+
+</body>
+</html>
