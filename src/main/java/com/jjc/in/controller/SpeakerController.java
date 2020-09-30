@@ -1,6 +1,7 @@
 package com.jjc.in.controller;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.jjc.in.model.Cover;
 import com.jjc.in.model.Speaker;
 import com.jjc.in.service.ISpeakerService;
 
@@ -45,7 +45,7 @@ public class SpeakerController {
 		
 		model.addAttribute("message", message);
 		
-		model.addAttribute("cover", new Cover());
+		model.addAttribute("speaker", new Speaker());
 		
 		return "SpeakerRegister";
 		

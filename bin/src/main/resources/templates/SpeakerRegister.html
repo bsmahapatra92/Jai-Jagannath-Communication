@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div th:insert="fragments/commonui :: userhead"></div>
+ 	<div th:insert="fragments/commonui :: usermenu"></div>
+
+
+		
+	    <div class="container-fluid">
+		<div class="card">
+			<div class="card-header bg-primary text-white text-center">
+				<h3>Welcome To Speakers Page</h3>
+			</div>
+			<div class="card-body">
+				<form id="speakerForm" th:action="@{/speaker/save}"
+					method="POST" th:object="${speaker}">
+
+					<!-- Row#1 -->
+					<div class="row">
+						<div class="col-2">
+							<label for="spkBrand">Brand</label>
+						</div>
+						<div class="col-4">
+							<input type="text" th:field="*{spkBrand}"
+								class="form-control" />
+						</div>
+						<div class="col-4">
+							<span id="spkBrandError"></span>
+						</div>
+					</div>
+
+
+					<!-- Row#2 -->
+					<div class="row">
+						<div class="col-2">
+							<label for="spkModName">ModelNo</label>
+						</div>
+						<div class="col-4">
+							<input type="text" th:field="*{spkModName}"
+								class="form-control" />
+						</div>
+						<div class="col-4">
+							<span id="spkModNameError"></span>
+						</div>
+					</div>
+					
+					
+					
+					<!-- Row#2 -->
+					<div class="row">
+						<div class="col-2">
+							<label for="spkBCost">B.Prize</label>
+						</div>
+						<div class="col-4">
+							<input type="number" th:field="*{spkBCost}"
+								class="form-control" />
+						</div>
+						<div class="col-4">
+							<span id="spkBCostError"></span>
+						</div>
+					</div>
+					
+					<!-- Row#2 -->
+					<div class="row">
+						<div class="col-2">
+							<label for="spkSCost">S.Prize</label>
+						</div>
+						<div class="col-4">
+							<input type="number" th:field="*{spkSCost}"
+								class="form-control" />
+						</div>
+						<div class="col-4">
+							<span id="spkSCostError"></span>
+						</div>
+					</div>
+					<input type="submit" class="btn btn-success" value="Save Speaker">|
+					<a th:href="@{/speaker/all}" class="btn btn-info">ViewALL</a>
+					
+				</form>
+			</div>
+			<!-- CARD BODY END -->
+
+			<!-- Card Footer Section -->
+			<div th:if="${message!=null}">
+				<div class="card-footer bg-info text-cyan text-center">
+					<b><span th:text="${message}"></span></b>
+				</div>
+			</div>
+		</div>
+		<!-- CARD END -->
+
+	</div>
+
+
+</body>
+</html>

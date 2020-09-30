@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	
+	<div th:insert="fragments/commonui :: userhead"></div>
+ 	<div th:insert="fragments/commonui :: usermenu"></div>
+<div class="container-fluid">
+		<div class="card">
+			<div class="card-header bg-primary text-white text-center">
+				<h3>Welcome To Cover Page</h3>
+			</div>
+			<div class="card-body">
+				<form id="coverForm" th:action="@{/cover/save}"
+					method="POST" th:object="${cover}">
+
+					<!-- Row#1 -->
+					<div class="row">
+						<div class="col-2">
+							<label for="cModelName">Model</label>
+						</div>
+						<div class="col-4">
+							<input type="text" th:field="*{cModelName}"
+								class="form-control" />
+						</div>
+						<div class="col-4">
+							<span id="cModelNameError"></span>
+						</div>
+					</div>
+
+
+					<!-- Row#2 -->
+					<div class="row">
+						<div class="col-2">
+							<label for="cColorName">Color</label>
+						</div>
+						<div class="col-4">
+							<input type="text" th:field="*{cColorName}"
+								class="form-control" />
+						</div>
+						<div class="col-4">
+							<span id="cColorNameError"></span>
+						</div>
+					</div>
+					
+					<!-- Row#2 -->
+					<div class="row">
+						<div class="col-2">
+							<label for="cCoverType">Type</label>
+						</div>
+						<div class="col-4">
+							<select th:field="*{cCoverType}" class="form-control">
+								<option value="">-SELECT-</option>
+								<option value="Costly">Costly</option>
+								<option value="Cheap">Cheap</option>
+							</select>
+						</div>
+						<div class="col-4">
+							<span id="cCoverTypeError"></span>
+						</div>
+					</div>
+					
+					<!-- Row#2 -->
+					<div class="row">
+						<div class="col-2">
+							<label for="cBCost">B.Prize</label>
+						</div>
+						<div class="col-4">
+							<input type="number" th:field="*{cBCost}"
+								class="form-control" />
+						</div>
+						<div class="col-4">
+							<span id="cBCostError"></span>
+						</div>
+					</div>
+					
+					<!-- Row#2 -->
+					<div class="row">
+						<div class="col-2">
+							<label for="cSCost">S.Prize</label>
+						</div>
+						<div class="col-4">
+							<input type="number" th:field="*{cSCost}"
+								class="form-control" />
+						</div>
+						<div class="col-4">
+							<span id="cSCostError"></span>
+						</div>
+					</div>
+					<input type="submit" class="btn btn-success" value="Save Cover">|
+					<a th:href="@{/cover/all}" class="btn btn-info">ViewALL</a>
+				</form>
+			</div>
+			<!-- CARD BODY END -->
+
+			<!-- Card Footer Section -->
+			<div th:if="${message!=null}">
+				<div class="card-footer bg-info text-cyan text-center">
+					<b><span th:text="${message}"></span></b>
+				</div>
+			</div>
+		</div>
+		<!-- CARD END -->
+
+	</div>
+
+
+</body>
+</html>

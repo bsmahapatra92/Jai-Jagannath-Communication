@@ -14,7 +14,7 @@
 
 			<div class="card">
 				<div class="card-head bg-secondary text-white text-center">
-						<h3>WELCOME TO EARPHONE PAGE</h3>
+						<h3>WELCOME TO SPEAKER DATA PAGE</h3>
 				</div>
 				
 				<div class="card-body bg-light">
@@ -24,21 +24,19 @@
 					<th>ID</th>
 					<th>Brand</th>
 					<th>Model</th>
-					<th>Color</th>
 					<th>B.Cost</th>
 					<th>S.Cost</th>
 					<th colspan="2">OPERATION</th>
 				</tr>
 				<tr th:each="ob:${list}">
-					<td th:text="${ob.earPhId}"></td>
-					<td th:text="${ob.earPhBrand}"></td>
-					<td th:text="${ob.earPhModel}"></td>
-					<td th:text="${ob.earPhColor}"></td>
-					<td th:text="${ob.earPhBCost}"></td>
-					<td th:text="${ob.earphSCost}"></td>
+					<td th:text="${ob.spkId}"></td>
+					<td th:text="${ob.spkBrand}"></td>
+					<td th:text="${ob.spkModName}"></td>
+					<td th:text="${ob.spkBCost}"></td>
+					<td th:text="${ob.spkSCost}"></td>
 					<td>
-						<a th:href="@{/earphone/edit?id={val} (val=${ob.earPhId})}" class="btn btn-info">EDIT</a>
-						<a th:href="@{/earphone/delete?id={val} (val=${ob.earPhId})}" class="btn btn-danger">DELETE</a>
+						<a th:href="@{/speaker/edit?id={val} (val=${ob.spkId})}" class="btn btn-info">EDIT</a>
+						<a th:href="@{/speaker/delete?id={val} (val=${ob.spkId})}" class="btn btn-danger">DELETE</a>
 					</td>
 				</tr>
 				</table>

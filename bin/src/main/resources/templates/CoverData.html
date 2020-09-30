@@ -14,7 +14,7 @@
 
 			<div class="card">
 				<div class="card-head bg-secondary text-white text-center">
-						<h3>WELCOME TO EARPHONE PAGE</h3>
+						<h3>WELCOME TO COVER DATA PAGE</h3>
 				</div>
 				
 				<div class="card-body bg-light">
@@ -22,23 +22,23 @@
 				<table class="table">
 				<tr>
 					<th>ID</th>
-					<th>Brand</th>
 					<th>Model</th>
 					<th>Color</th>
+					<th>Type</th>
 					<th>B.Cost</th>
 					<th>S.Cost</th>
 					<th colspan="2">OPERATION</th>
 				</tr>
 				<tr th:each="ob:${list}">
-					<td th:text="${ob.earPhId}"></td>
-					<td th:text="${ob.earPhBrand}"></td>
-					<td th:text="${ob.earPhModel}"></td>
-					<td th:text="${ob.earPhColor}"></td>
-					<td th:text="${ob.earPhBCost}"></td>
-					<td th:text="${ob.earphSCost}"></td>
+					<td th:text="${ob.cId}"></td>
+					<td th:text="${ob.cModelName}"></td>
+					<td th:text="${ob.cColorName}"></td>
+					<td th:text="${ob.cCoverType}"></td>
+					<td th:text="${ob.cBCost}"></td>
+					<td th:text="${ob.cSCost}"></td>
 					<td>
-						<a th:href="@{/earphone/edit?id={val} (val=${ob.earPhId})}" class="btn btn-info">EDIT</a>
-						<a th:href="@{/earphone/delete?id={val} (val=${ob.earPhId})}" class="btn btn-danger">DELETE</a>
+						<a th:href="@{/cover/edit?id={val} (val=${ob.cId})}" class="btn btn-info">EDIT</a>
+						<a th:href="@{/cover/delete?id={val} (val=${ob.cId})}" class="btn btn-danger">DELETE</a>
 					</td>
 				</tr>
 				</table>

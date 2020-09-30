@@ -30,12 +30,12 @@
 					<th colspan="2">OPERATION</th>
 				</tr>
 				<tr th:each="ob:${list}">
-					<td th:text="${ob.earPhId}"></td>
-					<td th:text="${ob.earPhBrand}"></td>
-					<td th:text="${ob.earPhModel}"></td>
-					<td th:text="${ob.earPhColor}"></td>
-					<td th:text="${ob.earPhBCost}"></td>
-					<td th:text="${ob.earphSCost}"></td>
+					<td th:text="${ob.cId}"></td>
+					<td th:text="${ob.cModelName}"></td>
+					<td th:text="${ob.cColorName}"></td>
+					<td th:text="${ob.cCoverType}"></td>
+					<td th:text="${ob.cBCost}"></td>
+					<td th:text="${ob.cSCost}"></td>
 					<td>
 						<a th:href="@{/earphone/edit?id={val} (val=${ob.earPhId})}" class="btn btn-info">EDIT</a>
 						<a th:href="@{/earphone/delete?id={val} (val=${ob.earPhId})}" class="btn btn-danger">DELETE</a>

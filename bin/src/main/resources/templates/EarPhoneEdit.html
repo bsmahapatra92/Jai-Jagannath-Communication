@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div th:insert="fragments/commonui :: userhead"></div>
+ 	<div th:insert="fragments/commonui :: usermenu"></div>
+
+
+		
+	    <div class="container-fluid">
+		<div class="card">
+			<div class="card-header bg-primary text-white text-center">
+				<h3>Welcome To EarPhones Page</h3>
+			</div>
+			<div class="card-body">
+				<form id="earphoneForm" th:action="@{/earphone/update}"
+					method="POST" th:object="${earphone}">
+
+					<!-- Row#1 -->
+					<div class="row">
+						<div class="col-2">
+							<label for="earPhBrand">Brand</label>
+						</div>
+						<div class="col-4">
+							<input type="text" th:field="*{earPhBrand}"
+								class="form-control" />
+						</div>
+						
+					</div>
+
+
+					<!-- Row#2 -->
+					<div class="row">
+						<div class="col-2">
+							<label for="earPhModel">ModelNo</label>
+						</div>
+						<div class="col-4">
+							<input type="text" th:field="*{earPhModel}"
+								class="form-control" />
+						</div>
+						
+					</div>
+					
+					<!-- Row#2 -->
+					<div class="row">
+						<div class="col-2">
+							<label for="earPhColor">Color</label>
+						</div>
+						<div class="col-4">
+							<input type="text" th:field="*{earPhColor}"
+								class="form-control" />
+						</div>
+						
+					</div>
+					
+					
+					<!-- Row#2 -->
+					<div class="row">
+						<div class="col-2">
+							<label for="earPhBCost">B.Prize</label>
+						</div>
+						<div class="col-4">
+							<input type="number" th:field="*{earPhBCost}"
+								class="form-control" />
+						</div>
+						<div class="col-4">
+							<span id="earPhBCostError"></span>
+						</div>
+					</div>
+					
+					<!-- Row#2 -->
+					<div class="row">
+						<div class="col-2">
+							<label for="earphSCost">S.Prize</label>
+						</div>
+						<div class="col-4">
+							<input type="number" th:field="*{earphSCost}"
+								class="form-control" />
+						</div>
+						<div class="col-4">
+							<span id="earphSCost"></span>
+						</div>
+					</div>
+					<input type="submit" class="btn btn-success" value="Save EarPhone">
+				</form>
+			</div>
+			<!-- CARD BODY END -->
+
+			<!-- Card Footer Section -->
+			<div th:if="${message!=null}">
+				<div class="card-footer bg-info text-cyan text-center">
+					<b><span th:text="${message}"></span></b>
+				</div>
+			</div>
+		</div>
+		<!-- CARD END -->
+
+	</div>
+
+
+</body>
+</html>
